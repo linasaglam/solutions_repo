@@ -9,10 +9,12 @@ To derive the governing equations of motion for a projectile, we start with Newt
 
 #### Equations of Motion
 - **Horizontal motion**: No acceleration, so:
+
   $$
   x(t) = v_0 \cos(\theta) \cdot t
   $$
-  where \( v_0 \) is the initial velocity, \( \theta \) is the angle of projection, and \( t \) is time.
+
+  where $v_0$ is the initial velocity, $\theta$ is the angle of projection, and \( t \) is time.
 - **Vertical motion**: Acceleration is \( -g \), so:
   $$
   y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
@@ -20,6 +22,7 @@ To derive the governing equations of motion for a projectile, we start with Newt
 
 #### Solving for Time of Flight
 The projectile returns to the ground when \( y(t) = 0 \):
+
 $$
 0 = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
 $$

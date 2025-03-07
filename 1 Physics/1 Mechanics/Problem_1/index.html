@@ -172,8 +172,89 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>lina1
-alela</p>
+<h1 id="mechanics">Mechanics</h1>
+<h2 id="problem-1-investigating-the-range-as-a-function-of-the-angle-of-projection">Problem 1: Investigating the Range as a Function of the Angle of Projection</h2>
+<h3 id="1-theoretical-foundation">1. Theoretical Foundation</h3>
+<p>To derive the governing equations of motion for a projectile, we start with Newton’s second law in a vacuum (no air resistance). The motion occurs in two dimensions: horizontal (x) and vertical (y). The only force acting is gravity, with acceleration <span class="arithmatex">\( g \)</span>, directed downward.</p>
+<h4 id="equations-of-motion">Equations of Motion</h4>
+<ul>
+<li><strong>Horizontal motion</strong>: No acceleration, so:
+  $$
+  x(t) = v_0 \cos(\theta) \cdot t
+  $$
+  where <span class="arithmatex">\( v_0 \)</span> is the initial velocity, <span class="arithmatex">\( \theta \)</span> is the angle of projection, and <span class="arithmatex">\( t \)</span> is time.</li>
+<li><strong>Vertical motion</strong>: Acceleration is <span class="arithmatex">\( -g \)</span>, so:
+  $$
+  y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+  $$</li>
+</ul>
+<h4 id="solving-for-time-of-flight">Solving for Time of Flight</h4>
+<p>The projectile returns to the ground when <span class="arithmatex">\( y(t) = 0 \)</span>:
+$$
+0 = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+$$
+Factorizing:
+$$
+t \left( v_0 \sin(\theta) - \frac{1}{2} g t \right) = 0
+$$
+Solutions: <span class="arithmatex">\( t = 0 \)</span> (launch) or:
+$$
+t = \frac{2 v_0 \sin(\theta)}{g}
+$$
+This is the time of flight.</p>
+<h4 id="range-equation">Range Equation</h4>
+<p>Substitute the time of flight into the horizontal equation:
+$$
+R = x\left(\frac{2 v_0 \sin(\theta)}{g}\right) = v_0 \cos(\theta) \cdot \frac{2 v_0 \sin(\theta)}{g} = \frac{2 v_0^2 \sin(\theta) \cos(\theta)}{g}
+$$
+Using the trigonometric identity <span class="arithmatex">\( \sin(2\theta) = 2 \sin(\theta) \cos(\theta) \)</span>:
+$$
+R = \frac{v_0^2 \sin(2\theta)}{g}
+$$
+This is the range as a function of the angle of projection. Different initial conditions (<span class="arithmatex">\( v_0 \)</span>, <span class="arithmatex">\( g \)</span>) yield a family of solutions, scaling the range accordingly.</p>
+<hr/>
+<h3 id="2-analysis-of-the-range">2. Analysis of the Range</h3>
+<p>The range <span class="arithmatex">\( R \)</span> depends on <span class="arithmatex">\( \theta \)</span> through <span class="arithmatex">\( \sin(2\theta) \)</span>:
+- <span class="arithmatex">\( R \)</span> is maximized when <span class="arithmatex">\( \sin(2\theta) = 1 \)</span>, i.e., <span class="arithmatex">\( 2\theta = 90^\circ \)</span>, so <span class="arithmatex">\( \theta = 45^\circ \)</span>.
+- <span class="arithmatex">\( R = 0 \)</span> when <span class="arithmatex">\( \sin(2\theta) = 0 \)</span>, i.e., <span class="arithmatex">\( \theta = 0^\circ \)</span> or <span class="arithmatex">\( 90^\circ \)</span>.
+- The relationship is symmetric about <span class="arithmatex">\( 45^\circ \)</span> (e.g., <span class="arithmatex">\( \theta = 30^\circ \)</span> and <span class="arithmatex">\( 60^\circ \)</span> give the same range).</p>
+<h4 id="influence-of-other-parameters">Influence of Other Parameters</h4>
+<ul>
+<li><strong>Initial Velocity (<span class="arithmatex">\( v_0 \)</span>)</strong>: <span class="arithmatex">\( R \propto v_0^2 \)</span>, so doubling <span class="arithmatex">\( v_0 \)</span> quadruples the range.</li>
+<li><strong>Gravitational Acceleration (<span class="arithmatex">\( g \)</span>)</strong>: <span class="arithmatex">\( R \propto 1/g \)</span>, so a smaller <span class="arithmatex">\( g \)</span> (e.g., on the Moon) increases the range.</li>
+</ul>
+<hr/>
+<h3 id="3-practical-applications">3. Practical Applications</h3>
+<p>This model assumes a flat surface and no air resistance, but it can be adapted:
+- <strong>Uneven Terrain</strong>: Adjust the landing height in the vertical equation, solving for <span class="arithmatex">\( t \)</span> when <span class="arithmatex">\( y(t) = h \)</span>. This complicates the range formula.
+- <strong>Air Resistance</strong>: Introduce a drag force proportional to velocity (e.g., <span class="arithmatex">\( F_d = -k v \)</span>), turning the equations into nonlinear differential equations, typically solved numerically.
+- <strong>Real-World Examples</strong>: Artillery, sports (e.g., golf, soccer), or space launches (with modified <span class="arithmatex">\( g \)</span>).</p>
+<hr/>
+<p>import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="constants">Constants</h1>
+<p>g = 9.81  # gravitational acceleration (m/s^2)</p>
+<h1 id="function-to-calculate-range">Function to calculate range</h1>
+<p>def calculate_range(v0, theta_deg):
+    theta_rad = np.radians(theta_deg)  # Convert degrees to radians
+    R = (v0**2 * np.sin(2 * theta_rad)) / g
+    return R</p>
+<h1 id="angles-from-0-to-90-degrees">Angles from 0 to 90 degrees</h1>
+<p>theta = np.linspace(0, 90, 181)  # 181 points for smooth curve</p>
+<h1 id="different-initial-velocities">Different initial velocities</h1>
+<p>v0_values = [10, 20, 30]  # m/s</p>
+<h1 id="plotting">Plotting</h1>
+<p>plt.figure(figsize=(10, 6))
+for v0 in v0_values:
+    R = calculate_range(v0, theta)
+    plt.plot(theta, R, label=f'v0 = {v0} m/s')</p>
+<h1 id="formatting-the-plot">Formatting the plot</h1>
+<p>plt.title('Range vs Angle of Projection')
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (meters)')
+plt.grid(True)
+plt.legend()
+plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

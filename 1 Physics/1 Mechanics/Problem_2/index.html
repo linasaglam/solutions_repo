@@ -172,6 +172,9 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<hr/>
+<h1 id="motivation">Motivation</h1>
+<p>The forced damped pendulum is a fascinating example of a physical system that exhibits complex dynamics due to the interplay between damping, restoring forces, and external driving forces. In many real-world systems, forces like damping and external driving forces significantly influence the behavior of oscillatory motion, leading to a variety of phenomena such as resonance, chaotic motion, and quasiperiodicity. Understanding these dynamics is essential not only in physics but also in fields like engineering, environmental science, and biomechanics.</p>
 <h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
 <h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
 <p>The motion of a forced damped pendulum can be described by the following second-order nonlinear differential equation:</p>
@@ -250,6 +253,7 @@ from scipy.integrate import solve_ivp</p>
 omega_0 = np.sqrt(g / L)
 \]</div>
 <h1 id="differential-equation-for-the-forced-damped-pendulum">Differential equation for the forced damped pendulum</h1>
+<hr/>
 <ul>
 <li><span class="arithmatex">\(def pendulum_eq(t, y, gamma, A, omega, omega_0):\)</span>
 <span class="arithmatex">\(theta, theta_dot = y\)</span>
@@ -264,6 +268,7 @@ y0 = [theta_0, theta_dot_0]
 t_eval = np.linspace(0, 50, 1000)
 $</p>
 <h1 id="solve-the-differential-equation-using-runge-kutta-method">Solve the differential equation using Runge-Kutta method</h1>
+<hr/>
 <ul>
 <li><span class="arithmatex">\(sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0))\)</span></li>
 </ul>

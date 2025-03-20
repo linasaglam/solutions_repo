@@ -1,4 +1,9 @@
 # Problem 2
+---
+# Motivation
+
+The forced damped pendulum is a fascinating example of a physical system that exhibits complex dynamics due to the interplay between damping, restoring forces, and external driving forces. In many real-world systems, forces like damping and external driving forces significantly influence the behavior of oscillatory motion, leading to a variety of phenomena such as resonance, chaotic motion, and quasiperiodicity. Understanding these dynamics is essential not only in physics but also in fields like engineering, environmental science, and biomechanics.
+
 # Investigating the Dynamics of a Forced Damped Pendulum
 
 ## 1. Theoretical Foundation
@@ -107,6 +112,7 @@ omega_0 = np.sqrt(g / L)
 $$
 
 # Differential equation for the forced damped pendulum
+---
 * $def pendulum_eq(t, y, gamma, A, omega, omega_0):$
 $theta, theta_dot = y$
 $dtheta_dt = theta_dot$
@@ -121,6 +127,7 @@ t_eval = np.linspace(0, 50, 1000)
 $
 
 # Solve the differential equation using Runge-Kutta method
+---
 * $sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0))$
 
 # Plotting the results
@@ -134,6 +141,7 @@ plt.legend()
 plt.show()
 
 # Plot Phase Space (theta vs. theta_dot)
+
 plt.figure(figsize=(10, 6))
 plt.plot(sol.y[0], sol.y[1], label='Phase Space')
 plt.title('Phase Space of the Forced Damped Pendulum')

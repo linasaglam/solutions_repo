@@ -14,7 +14,7 @@ To derive the governing equations of motion for a projectile, we start with Newt
   x(t) = v_0 \cos(\theta) \cdot t
   $$
 
-  where $v_0$ is the initial velocity, $\theta$ is the angle of projection, and $ t $ is time.
+  where $v_0$ is the initial velocity, $\theta$ is the angle of projection, and $t$ is time.
 - **Vertical motion**: Acceleration is $ -g $, so:
   $$
   y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2

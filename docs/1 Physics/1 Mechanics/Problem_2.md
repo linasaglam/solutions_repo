@@ -22,6 +22,8 @@ Where:
 - $A$ is the amplitude of the driving force,
 - $\omega$ is the frequency of the driving force.
 
+![alt text](image-2.png)
+
 ### Small-Angle Approximation
 
 For small angles ($\theta \ll 1$), we can approximate $\sin(\theta) \approx \theta$, leading to the following simplified linear equation:
@@ -88,6 +90,9 @@ Now, let's explore how different parameters affect the dynamics of the forced da
 * We will use a numerical approach to simulate the dynamics of the forced damped pendulum for various values of the damping coefficient, driving amplitude, and driving frequency.
 
 The equation will be solved using the **Runge-Kutta method**, which is an efficient way to solve differential equations numerically.
+
+
+![alt text](image-3.png)
 
 ## 3. Python Implementation
 

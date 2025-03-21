@@ -11,6 +11,9 @@ By studying these patterns, we can better understand wave behavior in a simple a
 
 We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:
 
+
+![alt text](image-3.png)
+
 ### Steps to Follow:
 
 1. **Select a Regular Polygon**: Choose a regular polygon (e.g., equilateral triangle, square, or regular pentagon).
@@ -43,8 +46,6 @@ Where:
 - $ \phi $ is the initial phase of the wave.
 
 
-![alt text](image-2.png)
-
 ### Superposition of Waves
 
 For multiple sources located at the vertices of a regular polygon, the total displacement at a point $ \vec{r} $ and time $ t $ is the sum of the individual displacements from each wave source. The **superposition principle** states:
@@ -60,6 +61,9 @@ Where:
 ## Python Code for Simulating Interference Patterns
 
 Below is the Python code that simulates the interference pattern resulting from point sources placed at the vertices of a regular polygon. The code computes the superposition of the waves emitted by these sources and visualizes the resulting interference pattern.
+
+
+![alt text](image-2.png)
 
 ### Python Script
 

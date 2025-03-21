@@ -26,6 +26,9 @@ where:
 - $ r $ is the distance from Earth’s center,
 - $ v $ is the velocity of the payload.
 
+
+![alt text](image-2.png)
+
 ### Python Simulation
 
 ```python

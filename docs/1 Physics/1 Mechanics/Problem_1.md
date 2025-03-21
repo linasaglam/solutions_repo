@@ -57,21 +57,21 @@ This is the range as a function of the angle of projection. Different initial co
 
 The range $R$ depends on $\theta$ through $\sin(2\theta)$:
 - $R$ is maximized when $\sin(2\theta) = 1$ , i.e., \ $2\theta = 90^\circ$, so $\theta = 45^\circ$.
-- $ R = 0 $ when $ \sin(2\theta) = 0 $, i.e., $ \theta = 0^\circ $ or $ 90^\circ $.
-- The relationship is symmetric about $ 45^\circ $ (e.g., $ \theta = 30^\circ $ and $ 60^\circ $ give the same range).
+- $R = 0$ when $\sin(2\theta) = 0$, i.e., $\theta = 0^\circ$ or $90^\circ$.
+- The relationship is symmetric about $45^\circ$ (e.g.,$ \theta = 30^\circ$ and $60^\circ$ give the same range).
 
 #### Influence of Other Parameters
-- **Initial Velocity ($ v_0 $)**: $ R \propto v_0^2 $, so doubling $ v_0 $ quadruples the range.
-- **Gravitational Acceleration ($ g $)**: $ R \propto 1/g $, so a smaller $ g $ (e.g., on the Moon) increases the range.
+- **Initial Velocity ($v_0$)**: $R \propto v_0^2$, so doubling$ v_0$ quadruples the range.
+- **Gravitational Acceleration ($g$)**: $R \propto 1/g$, so a smaller $g$ (e.g., on the Moon) increases the range.
 
 ---
 
 ### 3. Practical Applications
 
 This model assumes a flat surface and no air resistance, but it can be adapted:
-- **Uneven Terrain**: Adjust the landing height in the vertical equation, solving for $ t $ when $ y(t) = h $. This complicates the range formula.
-- **Air Resistance**: Introduce a drag force proportional to velocity (e.g., $ F_d = -k v $), turning the equations into nonlinear differential equations, typically solved numerically.
-- **Real-World Examples**: Artillery, sports (e.g., golf, soccer), or space launches (with modified $ g $).
+- **Uneven Terrain**: Adjust the landing height in the vertical equation, solving for $t$ when $y(t) = h$. This complicates the range formula.
+- **Air Resistance**: Introduce a drag force proportional to velocity (e.g., $F_d = -k v$), turning the equations into nonlinear differential equations, typically solved numerically.
+- **Real-World Examples**: Artillery, sports (e.g., golf, soccer), or space launches (with modified $g$).
 
 ---
 

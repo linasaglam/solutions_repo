@@ -43,6 +43,9 @@ $$
 
 This confirms Kepler's Third Law: $ T^2 \propto r^3 $.
 
+
+![alt text](image.png)
+
 ### Python Simulation
 
 

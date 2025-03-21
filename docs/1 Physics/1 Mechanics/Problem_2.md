@@ -10,9 +10,9 @@ The forced damped pendulum is a fascinating example of a physical system that ex
 
 The motion of a forced damped pendulum can be described by the following second-order nonlinear differential equation:
 
-$
+$$
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
-$
+$$
 
 Where:
 - $\theta$ is the angular displacement,
@@ -26,9 +26,9 @@ Where:
 
 For small angles ($\theta \ll 1$), we can approximate $\sin(\theta) \approx \theta$, leading to the following simplified linear equation:
 
-$
+$$
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
-$
+$$
 
 This is a linear second-order differential equation with constant coefficients, and its general solution can be found using standard methods for solving linear differential equations.
 
@@ -36,9 +36,9 @@ This is a linear second-order differential equation with constant coefficients, 
 
 The homogeneous part of the equation ($A = 0$) is:
 
-$
+$$
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \theta = 0
-$
+$$
 
 This is a damped harmonic oscillator equation, whose solution depends on the discriminant $\Delta = \gamma^2 - 4 \frac{g}{L}$. The behavior of the system depends on this discriminant:
 
@@ -50,15 +50,15 @@ This is a damped harmonic oscillator equation, whose solution depends on the dis
 
 For a driven pendulum with $A \neq 0$, the solution takes the form of a particular solution superimposed on the homogeneous solution:
 
-$
+$$
 \theta(t) = \theta_h(t) + \theta_p(t)
-$
+$$
 
 Where $\theta_p(t)$ is the particular solution. This particular solution can be found using the method of undetermined coefficients, which leads to a solution of the form:
 
-$
+$$
 \theta_p(t) = \frac{A}{\sqrt{(\omega_0^2 - \omega^2)^2 + (\gamma \omega)^2}} \cos(\omega t - \delta)
-$
+$$
 
 Where:
 - $\omega_0 = \sqrt{\frac{g}{L}}$ is the natural frequency of the pendulum,
@@ -68,9 +68,9 @@ Where:
 
 Resonance occurs when the driving frequency $\omega$ matches the natural frequency $\omega_0$ of the pendulum. In this case, the amplitude of oscillation increases significantly due to the constructive interference between the driving force and the motion of the pendulum. The resonance condition is given by:
 
-$
+$$
 \omega = \omega_0
-$
+$$
 
 In this condition, the system can absorb energy from the driving force efficiently, which can lead to large oscillations.
 
@@ -120,15 +120,15 @@ $dtheta_dot_dt = -gamma * theta_dot - (g / L) * np.sin(theta) + A * np.cos(omega
 $return [dtheta_dt, dtheta_dot_dt]$
 
 # Time span and initial conditions
-$
+$$
 t_span = (0, 50)
 y0 = [theta_0, theta_dot_0]
 t_eval = np.linspace(0, 50, 1000)
-$
+$$
 
 # Solve the differential equation using Runge-Kutta method
 ---
-* $sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0))$
+* $ sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0)) $
 
 # Plotting the results
 plt.figure(figsize=(10, 6))
@@ -142,6 +142,7 @@ plt.show()
 
 # Plot Phase Space (theta vs. theta_dot)
 
+
 plt.figure(figsize=(10, 6))
 plt.plot(sol.y[0], sol.y[1], label='Phase Space')
 plt.title('Phase Space of the Forced Damped Pendulum')
@@ -150,3 +151,5 @@ plt.ylabel(r'$\dot{\theta}$ (rad/s)')
 plt.grid(True)
 plt.legend()
 plt.show()
+
+---

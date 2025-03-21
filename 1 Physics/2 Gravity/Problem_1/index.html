@@ -56,6 +56,14 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#gravity-orbital-period-and-orbital-radius">Gravity: Orbital Period and Orbital Radius</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#keplers-third-law">Kepler's Third Law</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-simulation">Python Simulation</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -172,6 +180,68 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="gravity-orbital-period-and-orbital-radius">Gravity: Orbital Period and Orbital Radius</h2>
+<h3 id="keplers-third-law">Kepler's Third Law</h3>
+<p>Kepler’s Third Law states that the square of the orbital period <span class="arithmatex">\(T^2\)</span> is proportional to the cube of the orbital radius <span class="arithmatex">\(r^3\)</span>:</p>
+<div class="arithmatex">\[
+T^2 \propto r^3 
+\]</div>
+<p>This relationship can be derived from Newton's law of gravitation and circular motion dynamics. </p>
+<p>Using Newton’s law of universal gravitation:
+$$
+F = \frac{G M m}{r^2} 
+$$</p>
+<p>For circular orbits, the centripetal force required to keep a body in orbit is:
+$$
+ F = \frac{m v^2}{r} 
+$$</p>
+<p>Equating the gravitational force to the centripetal force:
+$$
+ \frac{G M m}{r^2} = \frac{m v^2}{r} 
+$$</p>
+<p>Since the orbital velocity $ v $ is related to the orbital period $ T $ by:
+$$
+ v = \frac{2 \pi r}{T} 
+$$</p>
+<p>Substituting $ v $ into the equation:
+$$
+ \frac{G M m}{r^2} = \frac{m (2 \pi r)^2}{T^2 r} 
+$$</p>
+<p>Simplifying:
+$$
+ T^2 = \frac{4 \pi^2}{G M} r^3 
+$$</p>
+<p>This confirms Kepler's Third Law: $ T^2 \propto r^3 $.</p>
+<h3 id="python-simulation">Python Simulation</h3>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import G</p>
+<h1 id="constants">Constants</h1>
+<p>M = 5.972e24  # Mass of Earth (kg)
+R_Earth = 6.371e6  # Radius of Earth (m)</p>
+<h1 id="define-function-to-compute-orbital-period">Define function to compute orbital period</h1>
+<p>def orbital_period(radius, mass=M):
+    return 2 * np.pi * np.sqrt(radius**3 / (G * mass))</p>
+<h1 id="generate-orbital-radii">Generate orbital radii</h1>
+<p>radii = np.linspace(R_Earth + 200e3, R_Earth + 1e7, 100)  # 200 km to 10000 km above Earth
+periods = orbital_period(radii)</p>
+<h1 id="plot-t2-vs-r3">Plot T^2 vs. r^3</h1>
+<p>plt.figure(figsize=(8, 6))
+plt.plot(radii<strong>3, periods</strong>2, label="<span class="arithmatex">\(T^2 \propto r^3\)</span>", color='b')
+plt.xlabel("Orbital Radius Cubed (m^3)")
+plt.ylabel("Orbital Period Squared (s^2)")
+plt.title("Verification of Kepler's Third Law")
+plt.legend()
+plt.grid()
+plt.show()</p>
+<h3 id="implications-and-applications">Implications and Applications</h3>
+<ul>
+<li>Kepler’s Third Law allows astronomers to determine planetary masses and distances.</li>
+<li>It applies to satellites, exoplanets, and even galaxies, aiding in the measurement of cosmic scales.</li>
+<li>The law extends to elliptical orbits with semi-major axis replacing the circular radius.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>The relationship <span class="arithmatex">\(T^2 \propto r^3\)</span> is fundamental in celestial mechanics. Our simulation verifies this principle, confirming its role in planetary motion and satellite dynamics.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

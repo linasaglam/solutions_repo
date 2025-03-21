@@ -61,6 +61,9 @@ $$
 velocities = {body: cosmic_velocities(m, r) for body, (m, r) in bodies.items()}
 $$
 
+
+![alt text](image-1.png)
+
 # Plot results
 
 $$

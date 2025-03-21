@@ -178,9 +178,9 @@
 <h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
 <h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
 <p>The motion of a forced damped pendulum can be described by the following second-order nonlinear differential equation:</p>
-<p>$
+<div class="arithmatex">\[
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
-$</p>
+\]</div>
 <p>Where:
 - <span class="arithmatex">\(\theta\)</span> is the angular displacement,
 - <span class="arithmatex">\(\gamma\)</span> is the damping coefficient,
@@ -190,15 +190,15 @@ $</p>
 - <span class="arithmatex">\(\omega\)</span> is the frequency of the driving force.</p>
 <h3 id="small-angle-approximation">Small-Angle Approximation</h3>
 <p>For small angles (<span class="arithmatex">\(\theta \ll 1\)</span>), we can approximate <span class="arithmatex">\(\sin(\theta) \approx \theta\)</span>, leading to the following simplified linear equation:</p>
-<p>$
+<div class="arithmatex">\[
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
-$</p>
+\]</div>
 <p>This is a linear second-order differential equation with constant coefficients, and its general solution can be found using standard methods for solving linear differential equations.</p>
 <h3 id="solution-to-the-homogeneous-equation">Solution to the Homogeneous Equation</h3>
 <p>The homogeneous part of the equation (<span class="arithmatex">\(A = 0\)</span>) is:</p>
-<p>$
+<div class="arithmatex">\[
 \frac{d^2 \theta}{dt^2} + \gamma \frac{d\theta}{dt} + \frac{g}{L} \theta = 0
-$</p>
+\]</div>
 <p>This is a damped harmonic oscillator equation, whose solution depends on the discriminant <span class="arithmatex">\(\Delta = \gamma^2 - 4 \frac{g}{L}\)</span>. The behavior of the system depends on this discriminant:</p>
 <ul>
 <li>If <span class="arithmatex">\(\Delta &gt; 0\)</span> (overdamped), the system returns to equilibrium without oscillating.</li>
@@ -207,21 +207,21 @@ $</p>
 </ul>
 <h3 id="forced-response">Forced Response</h3>
 <p>For a driven pendulum with <span class="arithmatex">\(A \neq 0\)</span>, the solution takes the form of a particular solution superimposed on the homogeneous solution:</p>
-<p>$
+<div class="arithmatex">\[
 \theta(t) = \theta_h(t) + \theta_p(t)
-$</p>
+\]</div>
 <p>Where <span class="arithmatex">\(\theta_p(t)\)</span> is the particular solution. This particular solution can be found using the method of undetermined coefficients, which leads to a solution of the form:</p>
-<p>$
+<div class="arithmatex">\[
 \theta_p(t) = \frac{A}{\sqrt{(\omega_0^2 - \omega^2)^2 + (\gamma \omega)^2}} \cos(\omega t - \delta)
-$</p>
+\]</div>
 <p>Where:
 - <span class="arithmatex">\(\omega_0 = \sqrt{\frac{g}{L}}\)</span> is the natural frequency of the pendulum,
 - <span class="arithmatex">\(\delta\)</span> is the phase shift between the driving force and the pendulum's motion.</p>
 <h3 id="resonance-condition">Resonance Condition</h3>
 <p>Resonance occurs when the driving frequency <span class="arithmatex">\(\omega\)</span> matches the natural frequency <span class="arithmatex">\(\omega_0\)</span> of the pendulum. In this case, the amplitude of oscillation increases significantly due to the constructive interference between the driving force and the motion of the pendulum. The resonance condition is given by:</p>
-<p>$
+<div class="arithmatex">\[
 \omega = \omega_0
-$</p>
+\]</div>
 <p>In this condition, the system can absorb energy from the driving force efficiently, which can lead to large oscillations.</p>
 <h2 id="2-analysis-of-dynamics">2. Analysis of Dynamics</h2>
 <p>Now, let's explore how different parameters affect the dynamics of the forced damped pendulum.</p>
@@ -262,15 +262,15 @@ omega_0 = np.sqrt(g / L)
 <span class="arithmatex">\(return [dtheta_dt, dtheta_dot_dt]\)</span></li>
 </ul>
 <h1 id="time-span-and-initial-conditions">Time span and initial conditions</h1>
-<p>$
+<div class="arithmatex">\[
 t_span = (0, 50)
 y0 = [theta_0, theta_dot_0]
 t_eval = np.linspace(0, 50, 1000)
-$</p>
+\]</div>
 <h1 id="solve-the-differential-equation-using-runge-kutta-method">Solve the differential equation using Runge-Kutta method</h1>
 <hr/>
 <ul>
-<li><span class="arithmatex">\(sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0))\)</span></li>
+<li>$ sol = solve_ivp(pendulum_eq, t_span, y0, t_eval=t_eval, args=(gamma, A, omega, omega_0)) $</li>
 </ul>
 <h1 id="plotting-the-results">Plotting the results</h1>
 <p>plt.figure(figsize=(10, 6))
@@ -290,6 +290,7 @@ plt.ylabel(r'<span class="arithmatex">\(\dot{\theta}\)</span> (rad/s)')
 plt.grid(True)
 plt.legend()
 plt.show()</p>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

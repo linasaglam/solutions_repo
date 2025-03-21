@@ -42,6 +42,9 @@ Where:
 - $ |\vec{r} - \vec{r}_0| $ is the distance from the source at position $ \vec{r}_0 $,
 - $ \phi $ is the initial phase of the wave.
 
+
+![alt text](image-2.png)
+
 ### Superposition of Waves
 
 For multiple sources located at the vertices of a regular polygon, the total displacement at a point $ \vec{r} $ and time $ t $ is the sum of the individual displacements from each wave source. The **superposition principle** states:

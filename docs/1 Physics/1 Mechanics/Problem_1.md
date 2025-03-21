@@ -54,6 +54,7 @@ This is the range as a function of the angle of projection. Different initial co
 
 ### 2. Analysis of the Range
 
+
 The range $ R $ depends on $ \theta $ through $ \sin(2\theta) $:
 - $ R $ is maximized when $ \sin(2\theta) = 1 $ , i.e., \$ 2\theta = 90^\circ $, so $ \theta = 45^\circ $.
 - $ R = 0 $ when $ \sin(2\theta) = 0 $, i.e., $ \theta = 0^\circ $ or $ 90^\circ $.
@@ -106,3 +107,4 @@ plt.ylabel('Range (meters)')
 plt.grid(True)
 plt.legend()
 plt.show()
+---

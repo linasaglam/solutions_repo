@@ -1,6 +1,6 @@
 # Problem 1
 # Mechanics
-
+---
 ## Problem 1: Investigating the Range as a Function of the Angle of Projection
 
 ### 1. Theoretical Foundation

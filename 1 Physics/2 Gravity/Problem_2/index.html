@@ -58,6 +58,16 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#definitions">Definitions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-simulation">Python Simulation</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_3/">Problem 3</a>
@@ -172,6 +182,81 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h2 id="escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</h2>
+<h3 id="introduction">Introduction</h3>
+<p>The concept of escape velocity is fundamental in space science, defining the minimum speed needed for an object to break free from a celestial body's gravitational pull. Additionally, the first, second, and third cosmic velocities describe different motion regimes crucial for satellite deployment, interplanetary travel, and interstellar exploration.</p>
+<h3 id="definitions">Definitions</h3>
+<ol>
+<li><strong>First Cosmic Velocity (Orbital Velocity)</strong></li>
+<li>The minimum velocity required to maintain a stable circular orbit around a celestial body.</li>
+<li>Given by:</li>
+</ol>
+<p>$$
+      v_1 = \sqrt{\frac{G M}{r}} 
+$$</p>
+<ol>
+<li><strong>Second Cosmic Velocity (Escape Velocity)</strong></li>
+<li>The velocity needed to completely escape a celestial body's gravitational field.</li>
+<li>Derived from energy conservation:</li>
+</ol>
+<p>$$
+      v_2 = \sqrt{2} v_1 = \sqrt{\frac{2 G M}{r}} 
+   $$</p>
+<ol>
+<li><strong>Third Cosmic Velocity (Solar System Escape Velocity)</strong></li>
+<li>The velocity required to escape the Sun’s gravitational influence from a planet.</li>
+<li>Given by:</li>
+</ol>
+<p>$$
+      v_3 = \sqrt{v_2^2 + v_{esc,sun}^2} 
+   $$</p>
+<h3 id="python-simulation">Python Simulation</h3>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import G</p>
+<h1 id="constants-for-celestial-bodies-mass-in-kg-radius-in-m">Constants for celestial bodies (mass in kg, radius in m)</h1>
+<div class="arithmatex">\[
+bodies = {
+    "Earth": (5.972e24, 6.371e6),
+    "Mars": (6.417e23, 3.389e6),
+    "Jupiter": (1.898e27, 6.9911e7)
+}
+\]</div>
+<h1 id="function-to-compute-velocities">Function to compute velocities</h1>
+<p>def cosmic_velocities(mass, radius):
+    v1 = np.sqrt(G * mass / radius)  # Orbital velocity
+    v2 = np.sqrt(2) * v1  # Escape velocity
+    return v1, v2</p>
+<h1 id="compute-velocities">Compute velocities</h1>
+<div class="arithmatex">\[
+velocities = {body: cosmic_velocities(m, r) for body, (m, r) in bodies.items()}
+\]</div>
+<h1 id="plot-results">Plot results</h1>
+<div class="arithmatex">\[
+labels = list(velocities.keys())
+vel1 = [velocities[b][0] for b in labels]
+vel2 = [velocities[b][1] for b in labels]
+\]</div>
+<p>x = np.arange(len(labels))
+width = 0.4</p>
+<p>plt.figure(figsize=(8, 6))
+plt.bar(x - width/2, vel1, width, label="Orbital Velocity (m/s)", color='b')
+plt.bar(x + width/2, vel2, width, label="Escape Velocity (m/s)", color='r')
+plt.xlabel("Celestial Body")
+plt.ylabel("Velocity (m/s)")
+plt.xticks(x, labels)
+plt.title("Cosmic Velocities for Different Celestial Bodies")
+plt.legend()
+plt.grid()
+plt.show()</p>
+<h3 id="importance-in-space-exploration">Importance in Space Exploration</h3>
+<ul>
+<li>The first cosmic velocity defines satellite launch speeds.</li>
+<li>The second cosmic velocity determines interplanetary mission requirements.</li>
+<li>The third cosmic velocity is crucial for interstellar travel considerations.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>Understanding cosmic velocities is essential for space missions, satellite technology, and future interplanetary and interstellar exploration. The provided simulation visualizes these velocities for key celestial bodies, demonstrating their role in space science and engineering.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

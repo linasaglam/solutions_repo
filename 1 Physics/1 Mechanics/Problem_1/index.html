@@ -219,19 +219,19 @@ This is the range as a function of the angle of projection. Different initial co
 <h3 id="2-analysis-of-the-range">2. Analysis of the Range</h3>
 <p>The range <span class="arithmatex">\(R\)</span> depends on <span class="arithmatex">\(\theta\)</span> through <span class="arithmatex">\(\sin(2\theta)\)</span>:
 - <span class="arithmatex">\(R\)</span> is maximized when <span class="arithmatex">\(\sin(2\theta) = 1\)</span> , i.e., \ <span class="arithmatex">\(2\theta = 90^\circ\)</span>, so <span class="arithmatex">\(\theta = 45^\circ\)</span>.
-- $ R = 0 $ when $ \sin(2\theta) = 0 $, i.e., $ \theta = 0^\circ $ or $ 90^\circ $.
-- The relationship is symmetric about $ 45^\circ $ (e.g., $ \theta = 30^\circ $ and $ 60^\circ $ give the same range).</p>
+- <span class="arithmatex">\(R = 0\)</span> when <span class="arithmatex">\(\sin(2\theta) = 0\)</span>, i.e., <span class="arithmatex">\(\theta = 0^\circ\)</span> or <span class="arithmatex">\(90^\circ\)</span>.
+- The relationship is symmetric about <span class="arithmatex">\(45^\circ\)</span> (e.g.,$ \theta = 30^\circ$ and <span class="arithmatex">\(60^\circ\)</span> give the same range).</p>
 <h4 id="influence-of-other-parameters">Influence of Other Parameters</h4>
 <ul>
-<li><strong>Initial Velocity ($ v_0 $)</strong>: $ R \propto v_0^2 $, so doubling $ v_0 $ quadruples the range.</li>
-<li><strong>Gravitational Acceleration ($ g $)</strong>: $ R \propto 1/g $, so a smaller $ g $ (e.g., on the Moon) increases the range.</li>
+<li><strong>Initial Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: <span class="arithmatex">\(R \propto v_0^2\)</span>, so doubling$ v_0$ quadruples the range.</li>
+<li><strong>Gravitational Acceleration (<span class="arithmatex">\(g\)</span>)</strong>: <span class="arithmatex">\(R \propto 1/g\)</span>, so a smaller <span class="arithmatex">\(g\)</span> (e.g., on the Moon) increases the range.</li>
 </ul>
 <hr/>
 <h3 id="3-practical-applications">3. Practical Applications</h3>
 <p>This model assumes a flat surface and no air resistance, but it can be adapted:
-- <strong>Uneven Terrain</strong>: Adjust the landing height in the vertical equation, solving for $ t $ when $ y(t) = h $. This complicates the range formula.
-- <strong>Air Resistance</strong>: Introduce a drag force proportional to velocity (e.g., $ F_d = -k v $), turning the equations into nonlinear differential equations, typically solved numerically.
-- <strong>Real-World Examples</strong>: Artillery, sports (e.g., golf, soccer), or space launches (with modified $ g $).</p>
+- <strong>Uneven Terrain</strong>: Adjust the landing height in the vertical equation, solving for <span class="arithmatex">\(t\)</span> when <span class="arithmatex">\(y(t) = h\)</span>. This complicates the range formula.
+- <strong>Air Resistance</strong>: Introduce a drag force proportional to velocity (e.g., <span class="arithmatex">\(F_d = -k v\)</span>), turning the equations into nonlinear differential equations, typically solved numerically.
+- <strong>Real-World Examples</strong>: Artillery, sports (e.g., golf, soccer), or space launches (with modified <span class="arithmatex">\(g\)</span>).</p>
 <hr/>
 <p>import numpy as np
 import matplotlib.pyplot as plt</p>

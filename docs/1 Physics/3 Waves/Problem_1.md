@@ -9,7 +9,7 @@ By studying these patterns, we can better understand wave behavior in a simple a
 
 ## Problem Statement
 
-markdown_text = """
+
 # Dalga Denklemi
 
 $$
@@ -26,10 +26,6 @@ where:
 - $\phi$ is the initial phase.
 """
 
-with open("wave_equation.md", "w", encoding="utf-8") as f:
-    f.write(markdown_text)
-
-print("Markdown file 'wave_equation.md' has been created.")
 
 
 We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:

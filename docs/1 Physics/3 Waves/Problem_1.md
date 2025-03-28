@@ -41,22 +41,22 @@ Where:
 - $ \psi(\vec{r}, t) $ is the displacement of the water surface at point $ \vec{r} $ and time $ t $,
 - $ A $ is the amplitude of the wave,
 - $ k $ is the wave number, related to the wavelength $ \lambda $ by $ k = \frac{2\pi}{\lambda} $,
-- $ \omega $ is the angular frequency, related to the frequency $ f $ by $ \omega = 2\pi f $,
-- $ |\vec{r} - \vec{r}_0| $ is the distance from the source at position $ \vec{r}_0 $,
-- $ \phi $ is the initial phase of the wave.
+- $\omega$ is the angular frequency, related to the frequency $f$ by $\omega = 2\pi f$,
+- $|\vec{r} - \vec{r}_0|$ is the distance from the source at position $ \vec{r}_0 $,
+- $\phi$ is the initial phase of the wave.
 
 
 ### Superposition of Waves
 
-For multiple sources located at the vertices of a regular polygon, the total displacement at a point $ \vec{r} $ and time $ t $ is the sum of the individual displacements from each wave source. The **superposition principle** states:
+For multiple sources located at the vertices of a regular polygon, the total displacement at a point $\vec{r}$ and time $t$ is the sum of the individual displacements from each wave source. The **superposition principle** states:
 
 $$
 \Psi(\vec{r}, t) = \sum_{i=1}^{N} \psi_i(\vec{r}, t)
 $$
 
 Where:
-- $ N $ is the number of sources (the vertices of the polygon),
-- $ \psi_i(\vec{r}, t) $ is the displacement from the $ i $-th source.
+- $N$ is the number of sources (the vertices of the polygon),
+- $\psi_i(\vec{r}, t)$ is the displacement from the $i$-th source.
 
 
 ![alt text](image-2.png)

@@ -107,7 +107,7 @@ sides = 4  # Change this for different polygons (3, 5, etc.)
 sources = polygon_vertices(sides)
 
 # Compute the superposition at all grid points
-Z = superposition(X, Y, sources, A, k, omega, t, phi)
+Z = superposition(X, Y, sources, A, k, omega, t, phi) .
 
 # Plot the interference pattern
 plt.figure(figsize=(6,6))

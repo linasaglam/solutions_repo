@@ -66,7 +66,6 @@ Where:
 Below is the Python code that simulates the interference pattern resulting from point sources placed at the vertices of a regular polygon. The code computes the superposition of the waves emitted by these sources and visualizes the resulting interference pattern.
 
 ### Python Script
-
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -121,3 +120,4 @@ plt.legend()
 plt.show()
 
 
+```

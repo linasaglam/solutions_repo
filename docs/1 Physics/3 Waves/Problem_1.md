@@ -11,7 +11,7 @@ By studying these patterns, we can better understand wave behavior in a simple a
 
 We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:
 
-# wawe equation
+# wave equation
 
 $$
 \eta(x,y,t) = \frac{A}{\sqrt{r}} \cdot \cos{(kr - \omega t + \phi)}

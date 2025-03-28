@@ -203,17 +203,17 @@
 - $ \psi(\vec{r}, t) $ is the displacement of the water surface at point $ \vec{r} $ and time $ t $,
 - $ A $ is the amplitude of the wave,
 - $ k $ is the wave number, related to the wavelength $ \lambda $ by $ k = \frac{2\pi}{\lambda} $,
-- $ \omega $ is the angular frequency, related to the frequency $ f $ by $ \omega = 2\pi f $,
-- $ |\vec{r} - \vec{r}_0| $ is the distance from the source at position $ \vec{r}_0 $,
-- $ \phi $ is the initial phase of the wave.</p>
+- <span class="arithmatex">\(\omega\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span> by <span class="arithmatex">\(\omega = 2\pi f\)</span>,
+- <span class="arithmatex">\(|\vec{r} - \vec{r}_0|\)</span> is the distance from the source at position $ \vec{r}_0 $,
+- <span class="arithmatex">\(\phi\)</span> is the initial phase of the wave.</p>
 <h3 id="superposition-of-waves">Superposition of Waves</h3>
-<p>For multiple sources located at the vertices of a regular polygon, the total displacement at a point $ \vec{r} $ and time $ t $ is the sum of the individual displacements from each wave source. The <strong>superposition principle</strong> states:</p>
+<p>For multiple sources located at the vertices of a regular polygon, the total displacement at a point <span class="arithmatex">\(\vec{r}\)</span> and time <span class="arithmatex">\(t\)</span> is the sum of the individual displacements from each wave source. The <strong>superposition principle</strong> states:</p>
 <div class="arithmatex">\[
 \Psi(\vec{r}, t) = \sum_{i=1}^{N} \psi_i(\vec{r}, t)
 \]</div>
 <p>Where:
-- $ N $ is the number of sources (the vertices of the polygon),
-- $ \psi_i(\vec{r}, t) $ is the displacement from the $ i $-th source.</p>
+- <span class="arithmatex">\(N\)</span> is the number of sources (the vertices of the polygon),
+- <span class="arithmatex">\(\psi_i(\vec{r}, t)\)</span> is the displacement from the <span class="arithmatex">\(i\)</span>-th source.</p>
 <p><img alt="alt text" src="../image-2.png"/></p>
 <h2 id="python-code-for-simulating-interference-patterns">Python Code for Simulating Interference Patterns</h2>
 <p>Below is the Python code that simulates the interference pattern resulting from point sources placed at the vertices of a regular polygon. The code computes the superposition of the waves emitted by these sources and visualizes the resulting interference pattern.</p>

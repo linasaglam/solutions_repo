@@ -59,13 +59,11 @@ Where:
 - $ \psi_i(\vec{r}, t) $ is the displacement from the $ i $-th source.
 
 
-![alt text](image-2.png)ssss
+![alt text](image-2.png)
 
 ## Python Code for Simulating Interference Patterns
 
 Below is the Python code that simulates the interference pattern resulting from point sources placed at the vertices of a regular polygon. The code computes the superposition of the waves emitted by these sources and visualizes the resulting interference pattern.
-
-
 
 ### Python Script
 

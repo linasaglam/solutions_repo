@@ -218,42 +218,49 @@
 <h2 id="python-code-for-simulating-interference-patterns">Python Code for Simulating Interference Patterns</h2>
 <p>Below is the Python code that simulates the interference pattern resulting from point sources placed at the vertices of a regular polygon. The code computes the superposition of the waves emitted by these sources and visualizes the resulting interference pattern.</p>
 <h3 id="python-script">Python Script</h3>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="constants">Constants</h1>
-<p>A = 1.0  # Amplitude of the wave
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+A = 1.0  # Amplitude of the wave
 k = 2 * np.pi / 1.0  # Wave number (for wavelength λ = 1)
 omega = 2 * np.pi  # Angular frequency (for frequency f = 1)
 phi = 0  # Initial phase
 f = 1  # Frequency of the wave
-t = 0  # Time at which the interference pattern is computed</p>
-<h1 id="define-the-polygon-vertices">Define the polygon vertices</h1>
-<p>def polygon_vertices(sides, radius=1):
+t = 0  # Time at which the interference pattern is computed
+
+# Define the polygon vertices
+def polygon_vertices(sides, radius=1):
     """Calculate the vertices of a regular polygon inscribed in a circle."""
     angles = np.linspace(0, 2*np.pi, sides, endpoint=False)
-    return np.array([[radius * np.cos(angle), radius * np.sin(angle)] for angle in angles])</p>
-<h1 id="wave-function-at-each-point-from-a-single-source">Wave function at each point (from a single source)</h1>
-<p>def wave(x, y, source, A, k, omega, t, phi):
-    r = np.sqrt((x - source[0])<strong>2 + (y - source[1])</strong>2)
-    return A * np.cos(k * r - omega * t + phi)</p>
-<h1 id="superposition-of-waves-from-multiple-sources-polygon-vertices">Superposition of waves from multiple sources (polygon vertices)</h1>
-<p>def superposition(x, y, sources, A, k, omega, t, phi):
+    return np.array([[radius * np.cos(angle), radius * np.sin(angle)] for angle in angles])
+
+# Wave function at each point (from a single source)
+def wave(x, y, source, A, k, omega, t, phi):
+    r = np.sqrt((x - source[0])**2 + (y - source[1])**2)
+    return A * np.cos(k * r - omega * t + phi)
+
+# Superposition of waves from multiple sources (polygon vertices)
+def superposition(x, y, sources, A, k, omega, t, phi):
     total_wave = np.zeros_like(x)
     for source in sources:
         total_wave += wave(x, y, source, A, k, omega, t, phi)
-    return total_wave</p>
-<h1 id="create-grid-of-points">Create grid of points</h1>
-<p>x = np.linspace(-2, 2, 400)
+    return total_wave
+
+# Create grid of points
+x = np.linspace(-2, 2, 400)
 y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)</p>
-<h1 id="number-of-sides-of-the-polygon-eg-3-for-triangle-4-for-square">Number of sides of the polygon (e.g., 3 for triangle, 4 for square)</h1>
-<p>sides = 4  # Change this for different polygons (3, 5, etc.)
-sources = polygon_vertices(sides)</p>
-<h1 id="compute-the-superposition-at-all-grid-points">Compute the superposition at all grid points</h1>
-<p>Z = superposition(X, Y, sources, A, k, omega, t, phi) .</p>
-<h1 id="plot-the-interference-pattern">Plot the interference pattern</h1>
-<p>plt.figure(figsize=(6,6))
+X, Y = np.meshgrid(x, y)
+
+# Number of sides of the polygon (e.g., 3 for triangle, 4 for square)
+sides = 4  # Change this for different polygons (3, 5, etc.)
+sources = polygon_vertices(sides)
+
+# Compute the superposition at all grid points
+Z = superposition(X, Y, sources, A, k, omega, t, phi) .
+
+# Plot the interference pattern
+plt.figure(figsize=(6,6))
 plt.contourf(X, Y, Z, 20, cmap='RdGy')
 plt.colorbar(label='Displacement (ψ)')
 plt.scatter(sources[:,0], sources[:,1], color='black', label='Sources', zorder=5)
@@ -261,7 +268,10 @@ plt.title(f'Interference Pattern for {sides}-Sided Polygon')
 plt.xlabel('X')
 plt.ylabel('Y')
 plt.legend()
-plt.show()</p>
+plt.show()
+
+
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

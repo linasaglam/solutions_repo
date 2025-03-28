@@ -9,8 +9,9 @@ By studying these patterns, we can better understand wave behavior in a simple a
 
 ## Problem Statement
 
+We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:
 
-# Dalga Denklemi
+# wawe equation
 
 $$
 \eta(x,y,t) = \frac{A}{\sqrt{r}} \cdot \cos{(kr - \omega t + \phi)}
@@ -27,8 +28,6 @@ where:
 """
 
 
-
-We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:
 
 
 ![alt text](image-3.png)

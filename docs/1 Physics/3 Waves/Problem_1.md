@@ -9,6 +9,29 @@ By studying these patterns, we can better understand wave behavior in a simple a
 
 ## Problem Statement
 
+markdown_text = """
+# Dalga Denklemi
+
+$$
+\eta(x,y,t) = \frac{A}{\sqrt{r}} \cdot \cos{(kr - \omega t + \phi)}
+$$
+
+where:
+
+- $\eta(x,y,t)$ is the displacement of the water surface at point $(x,y)$ and time $t$,
+- $A$ is the amplitude of the wave,
+- $k = \frac{2\pi}{\lambda}$ is the wave number, related to the wavelength $\lambda$,
+- $\omega = 2\pi f$ is the angular frequency, related to the frequency $f$,
+- $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ is the distance from the source to the point $(x,y)$,
+- $\phi$ is the initial phase.
+"""
+
+with open("wave_equation.md", "w", encoding="utf-8") as f:
+    f.write(markdown_text)
+
+print("Markdown file 'wave_equation.md' has been created.")
+
+
 We are tasked with analyzing the interference patterns formed on a water surface due to the superposition of waves emitted from point sources placed at the vertices of a chosen regular polygon. The following steps outline the process:
 
 
@@ -25,7 +48,7 @@ We are tasked with analyzing the interference patterns formed on a water surface
 
 ### Key Considerations:
 
-- All sources emit waves with the same amplitude $ A $, wavelength $ \lambda $, and frequency $ f $.
+- All sources emit waves with the same amplitude $A$, wavelength $\lambda$, and frequency $f$.
 - The waves are coherent, meaning they maintain a constant phase difference.
 - Use simulation and visualization tools, such as Python with Matplotlib, to aid in the analysis.
 
@@ -38,9 +61,9 @@ $$
 $$
 
 Where:
-- $ \psi(\vec{r}, t) $ is the displacement of the water surface at point $ \vec{r} $ and time $ t $,
-- $ A $ is the amplitude of the wave,
-- $ k $ is the wave number, related to the wavelength $ \lambda $ by $ k = \frac{2\pi}{\lambda} $,
+- $\psi(\vec{r}, t)$ is the displacement of the water surface at point $\vec{r}$ and time $t$,
+- $A$ is the amplitude of the wave,
+- $k$ is the wave number, related to the wavelength $\lambda$ by $k = \frac{2\pi}{\lambda}$,
 - $\omega$ is the angular frequency, related to the frequency $f$ by $\omega = 2\pi f$,
 - $|\vec{r} - \vec{r}_0|$ is the distance from the source at position $ \vec{r}_0 $,
 - $\phi$ is the initial phase of the wave.

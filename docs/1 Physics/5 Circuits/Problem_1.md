@@ -117,3 +117,4 @@ print(f"The equivalent resistance of the circuit is: {R_eq} Ohms")
 5. **Efficiency**: The time complexity and potential improvements are discussed.
 
 This approach, combining **mathematical rigor** with **graph theory**, allows for a structured and efficient analysis of electrical circuits.
+```

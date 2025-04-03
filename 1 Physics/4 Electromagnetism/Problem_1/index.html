@@ -176,12 +176,12 @@
 <h1 id="simulating-the-effects-of-the-lorentz-force"><strong>Simulating the Effects of the Lorentz Force</strong></h1>
 <h2 id="motivation"><strong>Motivation</strong></h2>
 <p>The Lorentz force governs the motion of charged particles in electric and magnetic fields. It is given by:</p>
-<div class="arithmatex">\[ \mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B}) \]</div>
+<div class="arithmatex">\[\mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})\]</div>
 <p>where:
-- $ q $ is the charge of the particle,
-- $ \mathbf{E} $ is the electric field,
-- $ \mathbf{B} $ is the magnetic field,
-- $ \mathbf{v} $ is the velocity of the particle.</p>
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field,
+- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field,
+- <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity of the particle.</p>
 <p>This force plays a crucial role in various physical systems such as:
 - <strong>Particle accelerators</strong>
 - <strong>Mass spectrometers</strong>
@@ -190,11 +190,11 @@
 <hr/>
 <h2 id="1-equations-of-motion"><strong>1. Equations of Motion</strong></h2>
 <p>Using Newton’s second law:</p>
-<div class="arithmatex">\[ m \frac{d\mathbf{v}}{dt} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B}) \]</div>
+<div class="arithmatex">\[m \frac{d\mathbf{v}}{dt} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})\]</div>
 <p>Expanding this into components:</p>
-<p>$ m \frac{dv_x}{dt} = q (E_x + v_y B_z - v_z B_y) $
-$ m \frac{dv_y}{dt} = q (E_y + v_z B_x - v_x B_z) $
-$ m \frac{dv_z}{dt} = q (E_z + v_x B_y - v_y B_x) $</p>
+<p><span class="arithmatex">\(m \frac{dv_x}{dt} = q (E_x + v_y B_z - v_z B_y)\)</span>
+<span class="arithmatex">\(m \frac{dv_y}{dt} = q (E_y + v_z B_x - v_x B_z)\)</span>
+<span class="arithmatex">\(m \frac{dv_z}{dt} = q (E_z + v_x B_y - v_y B_x)\)</span></p>
 <p>We numerically solve these equations using the Runge-Kutta or Euler method.</p>
 <hr/>
 <h2 id="2-implementation-in-python"><strong>2. Implementation in Python</strong></h2>
@@ -245,11 +245,11 @@ plt.show()
 <h2 id="3-results-and-observations"><strong>3. Results and Observations</strong></h2>
 <ul>
 <li>The particle undergoes a <strong>circular motion</strong> due to the Lorentz force in a uniform magnetic field.</li>
-<li>When both $ \mathbf{E} $ and $ \mathbf{B} $ fields are present, the motion can become <strong>helical</strong> or exhibit an <strong>E×B drift</strong>.</li>
+<li>When both <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> fields are present, the motion can become <strong>helical</strong> or exhibit an <strong>E×B drift</strong>.</li>
 <li>The <strong>Larmor radius</strong> (radius of circular motion) is given by:</li>
 </ul>
-<p>$$ r_L = \frac{m v_\perp}{q B} $$</p>
-<p>where $ v_\perp $ is the velocity perpendicular to $ \mathbf{B} $.</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(r_L = \frac{m v_\perp}{q B}\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(v_\perp\)</span> is the velocity perpendicular to <span class="arithmatex">\(\mathbf{B}\)</span>.</p>
 <p><img alt="alt text" src="../image-1.png"/></p>
 <hr/>
 <h2 id="4-extensions-and-further-work"><strong>4. Extensions and Further Work</strong></h2>

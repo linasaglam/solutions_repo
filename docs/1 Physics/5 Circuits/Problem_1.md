@@ -15,12 +15,10 @@ In electrical circuits, the equivalent resistance depends on how resistors are c
 ### **Series Connection**
 When resistors are connected in series, the **total or equivalent resistance** $R_{\text{eq}}$ is the sum of the individual resistances:
 
-$
-R_{\text{eq}} = R_1 + R_2 + R_3 + \dots + R_n
-$
+$R_{\text{eq}} = R_1 + R_2 + R_3 + \dots + R_n$
 
 Where:
-- $ R_1, R_2, R_3, \dots, R_n $ are the resistances of the individual resistors.
+- $R_1, R_2, R_3, \dots, R_n$ are the resistances of the individual resistors.
 
 
 ![alt text](image.png)
@@ -29,18 +27,14 @@ Where:
 ### **Parallel Connection**
 For resistors connected in parallel, the equivalent resistance is given by:
 
-$
-\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}
-$
+$\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}$
 
 Where:
 - $R_1, R_2, R_3, \dots, R_n$ are the resistances of the individual resistors.
 
 Alternatively, for two resistors $R_1$ and $R_2$ in parallel, the equivalent resistance $R_{\text{eq}}$ is:
 
-$
-R_{\text{eq}} = \frac{R_1 R_2}{R_1 + R_2}
-$
+$R_{\text{eq}} = \frac{R_1 R_2}{R_1 + R_2}$
 
 ### **Graph Representation**
 We can model the circuit as a graph where:

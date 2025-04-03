@@ -5,13 +5,13 @@
 ## **Motivation**
 The Lorentz force governs the motion of charged particles in electric and magnetic fields. It is given by:
 
-$$ \mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B}) $$
+$$\mathbf{F} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})$$
 
 where:
-- $ q $ is the charge of the particle,
-- $ \mathbf{E} $ is the electric field,
-- $ \mathbf{B} $ is the magnetic field,
-- $ \mathbf{v} $ is the velocity of the particle.
+- $q$ is the charge of the particle,
+- $\mathbf{E}$ is the electric field,
+- $\mathbf{B}$ is the magnetic field,
+- $\mathbf{v}$ is the velocity of the particle.
 
 This force plays a crucial role in various physical systems such as:
 - **Particle accelerators**
@@ -24,13 +24,13 @@ By simulating the motion of charged particles, we can better understand the prac
 ## **1. Equations of Motion**
 Using Newton’s second law:
 
-$$ m \frac{d\mathbf{v}}{dt} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B}) $$
+$$m \frac{d\mathbf{v}}{dt} = q (\mathbf{E} + \mathbf{v} \times \mathbf{B})$$
 
 Expanding this into components:
 
-$ m \frac{dv_x}{dt} = q (E_x + v_y B_z - v_z B_y) $
-$ m \frac{dv_y}{dt} = q (E_y + v_z B_x - v_x B_z) $
-$ m \frac{dv_z}{dt} = q (E_z + v_x B_y - v_y B_x) $
+$m \frac{dv_x}{dt} = q (E_x + v_y B_z - v_z B_y)$
+$m \frac{dv_y}{dt} = q (E_y + v_z B_x - v_x B_z)$
+$m \frac{dv_z}{dt} = q (E_z + v_x B_y - v_y B_x)$
 
 We numerically solve these equations using the Runge-Kutta or Euler method.
 
@@ -84,12 +84,12 @@ plt.show()
 ---
 ## **3. Results and Observations**
 - The particle undergoes a **circular motion** due to the Lorentz force in a uniform magnetic field.
-- When both $ \mathbf{E} $ and $ \mathbf{B} $ fields are present, the motion can become **helical** or exhibit an **E×B drift**.
+- When both $\mathbf{E}$ and $\mathbf{B}$ fields are present, the motion can become **helical** or exhibit an **E×B drift**.
 - The **Larmor radius** (radius of circular motion) is given by:
   
-  $$ r_L = \frac{m v_\perp}{q B} $$
+  $$r_L = \frac{m v_\perp}{q B}$$
   
-  where $ v_\perp $ is the velocity perpendicular to $ \mathbf{B} $.
+  where $v_\perp$ is the velocity perpendicular to $\mathbf{B}$.
 
 ![alt text](image-1.png)
 

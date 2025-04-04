@@ -8,23 +8,23 @@ When a payload is released from a moving rocket near Earth, its trajectory depen
 ### Types of Trajectories
 
 1. **Elliptical Orbit:** If the payload’s velocity is below the escape velocity $v_2$, it remains in a closed elliptical orbit around Earth.
-   $ E < 0, \quad v < v_2 $
+   $E < 0, \quad v < v_2$
 
 2. **Parabolic Trajectory:** If the velocity equals the escape velocity $v_2$, the payload follows a parabolic trajectory and just escapes Earth's gravitational influence.
-   $ E = 0, \quad v = v_2 $
+   $E = 0, \quad v = v_2$
 
 3. **Hyperbolic Trajectory:** If the velocity exceeds escape velocity, the payload follows a hyperbolic trajectory and leaves Earth’s gravitational field.
-   $ E > 0, \quad v > v_2 $
+   $E > 0, \quad v > v_2$
 
 The total energy of the payload is given by:
-$ E = \frac{1}{2} m v^2 - \frac{G M m}{r} $
+$E = \frac{1}{2} m v^2 - \frac{G M m}{r}$
 
 where:
-- $ G $ is the gravitational constant,
-- $ M $ is Earth’s mass,
-- $ m $ is the payload’s mass,
-- $ r $ is the distance from Earth’s center,
-- $ v $ is the velocity of the payload.
+- $G$ is the gravitational constant,
+- $M$ is Earth’s mass,
+- $m$ is the payload’s mass,
+- $r$ is the distance from Earth’s center,
+- $v$ is the velocity of the payload.
 
 
 ![alt text](image-2.png)

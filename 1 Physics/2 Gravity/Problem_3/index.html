@@ -193,25 +193,25 @@
 <ol>
 <li>
 <p><strong>Elliptical Orbit:</strong> If the payload’s velocity is below the escape velocity <span class="arithmatex">\(v_2\)</span>, it remains in a closed elliptical orbit around Earth.
-   $ E &lt; 0, \quad v &lt; v_2 $</p>
+   <span class="arithmatex">\(E &lt; 0, \quad v &lt; v_2\)</span></p>
 </li>
 <li>
 <p><strong>Parabolic Trajectory:</strong> If the velocity equals the escape velocity <span class="arithmatex">\(v_2\)</span>, the payload follows a parabolic trajectory and just escapes Earth's gravitational influence.
-   $ E = 0, \quad v = v_2 $</p>
+   <span class="arithmatex">\(E = 0, \quad v = v_2\)</span></p>
 </li>
 <li>
 <p><strong>Hyperbolic Trajectory:</strong> If the velocity exceeds escape velocity, the payload follows a hyperbolic trajectory and leaves Earth’s gravitational field.
-   $ E &gt; 0, \quad v &gt; v_2 $</p>
+   <span class="arithmatex">\(E &gt; 0, \quad v &gt; v_2\)</span></p>
 </li>
 </ol>
 <p>The total energy of the payload is given by:
-$ E = \frac{1}{2} m v^2 - \frac{G M m}{r} $</p>
+<span class="arithmatex">\(E = \frac{1}{2} m v^2 - \frac{G M m}{r}\)</span></p>
 <p>where:
-- $ G $ is the gravitational constant,
-- $ M $ is Earth’s mass,
-- $ m $ is the payload’s mass,
-- $ r $ is the distance from Earth’s center,
-- $ v $ is the velocity of the payload.</p>
+- <span class="arithmatex">\(G\)</span> is the gravitational constant,
+- <span class="arithmatex">\(M\)</span> is Earth’s mass,
+- <span class="arithmatex">\(m\)</span> is the payload’s mass,
+- <span class="arithmatex">\(r\)</span> is the distance from Earth’s center,
+- <span class="arithmatex">\(v\)</span> is the velocity of the payload.</p>
 <p><img alt="alt text" src="../image-2.png"/></p>
 <h3 id="python-simulation">Python Simulation</h3>
 <pre><code class="language-python">import numpy as np

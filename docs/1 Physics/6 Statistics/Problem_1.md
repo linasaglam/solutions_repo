@@ -4,28 +4,28 @@
 
 ---
 # Motivation:
-#
-# The **Central Limit Theorem (CLT)** is a fundamental result in statistics that 
+
+ The **Central Limit Theorem (CLT)** is a fundamental result in statistics that 
 # states the following:
-# 
-# "The sampling distribution of the sample mean will tend to follow a **normal distribution** 
-# as the sample size increases, regardless of the shape of the original population distribution."
+ 
+ "The sampling distribution of the sample mean will tend to follow a **normal distribution** 
+ as the sample size increases, regardless of the shape of the original population distribution."
 #
-# This means that even if the underlying population is not normally distributed, 
-# if we take sufficiently large random samples and compute the sample mean, the distribution of the 
-# sample means will converge to a normal distribution as the sample size increases.
+ This means that even if the underlying population is not normally distributed, 
+ if we take sufficiently large random samples and compute the sample mean, the distribution of the 
+ sample means will converge to a normal distribution as the sample size increases.
 #
-# Mathematically, let X₁, X₂, ..., Xₙ be i.i.d. (independent and identically distributed) random variables 
-# with a population mean μ and variance σ². Then the sample mean:
-#
-#     X̄ₙ = (1/n) * Σ Xᵢ  follows:
-#     X̄ₙ ~ N(μ, σ²/n) approximately, as n → ∞
-#
-# This theorem holds true regardless of the original population distribution (e.g., Uniform, Exponential, Binomial).
-# 
-# By simulating different population distributions and calculating sample means, we can observe the CLT in action.
+ Mathematically, let X₁, X₂, ..., Xₙ be i.i.d. (independent and identically distributed) random variables 
+ with a population mean μ and variance σ². Then the sample mean:
+
+ X̄ₙ = (1/n) * Σ Xᵢ  follows:
+ X̄ₙ ~ N(μ, σ²/n) approximately, as n → ∞
+
+ This theorem holds true regardless of the original population distribution (e.g., Uniform, Exponential, Binomial).
+
+ By simulating different population distributions and calculating sample means, we can observe the CLT in action.
 ---
-# Population size (large enough to approximate the "true" population)
+Population size (large enough to approximate the "true" population)
 population_size = 100000
 
 # Generate different population distributions
@@ -108,14 +108,14 @@ for dist_name, population in distributions.items():
 
 # CLT Summary:
 #
-# Regardless of the original population distribution (uniform, skewed, discrete),
-# as the sample size increases, the distribution of the sample mean approaches
+ Regardless of the original population distribution (uniform, skewed, discrete),
+ as the sample size increases, the distribution of the sample mean approaches
 # a normal distribution:
 #
-#    X̄ₙ ≈ N(μ, σ²/n)
+   X̄ₙ ≈ N(μ, σ²/n)
 #
 # Key observations from simulation:
-# - With small sample sizes (e.g., n=5), the shape of the population is still visible.
-# - At n=30 or greater, all distributions begin to look approximately normal.
-# - The variance of the sample mean decreases as sample size increases.
+ - With small sample sizes (e.g., n=5), the shape of the population is still visible.
+ - At n=30 or greater, all distributions begin to look approximately normal.
+ - The variance of the sample mean decreases as sample size increases.
 

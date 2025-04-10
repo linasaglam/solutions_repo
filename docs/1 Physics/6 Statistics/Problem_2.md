@@ -1,50 +1,73 @@
 # Problem 2
-# Estimating $ \pi $ Using Monte Carlo Methods
+# Estimating $\pi$ Using Monte Carlo Methods
 
 ## Motivation:
-Monte Carlo simulations are a powerful class of computational techniques that use randomness to solve problems or estimate values. One of the most elegant applications of Monte Carlo methods is estimating the value of $ \pi $ through geometric probability. By randomly generating points and analyzing their positions relative to a geometric shape, we can approximate $ \pi $ in an intuitive and visually engaging way.
+Monte Carlo simulations are a powerful class of computational techniques that use randomness to solve problems or estimate values. One of the most elegant applications of Monte Carlo methods is estimating the value of $\pi$ through geometric probability. By randomly generating points and analyzing their positions relative to a geometric shape, we can approximate $\pi$ in an intuitive and visually engaging way.
 
-This problem connects fundamental concepts of probability, geometry, and numerical computation. It also provides a gateway to understanding how randomness can be harnessed to solve complex problems in physics, finance, and computer science. The Monte Carlo approach to $ \pi $ estimation highlights the versatility and simplicity of this method while offering practical insights into convergence rates and computational efficiency.
+This problem connects fundamental concepts of probability, geometry, and numerical computation. It also provides a gateway to understanding how randomness can be harnessed to solve complex problems in physics, finance, and computer science. The Monte Carlo approach to $\pi$ estimation highlights the versatility and simplicity of this method while offering practical insights into convergence rates and computational efficiency.
 
-## Part 1: Estimating $ \pi $ Using a Circle
+
+
+## Part 1: Estimating $\pi$ Using a Circle
 
 ### 1. Theoretical Foundation:
+- The ratio of points inside a circle to the total number of points in a square can be used to estimate $\pi$. 
+- A unit circle with radius $r = 1$ is inscribed within a square with side length 2. The area of the circle is $A_{\text{circle}} = \pi r^2$, which simplifies to $\pi$ for $r = 1$.
+- The area of the square is $A_{\text{square}} = 2 \times 2 = 4$.
+- The ratio of points inside the circle to the total points can be used to approximate $\pi$:
+  
+$\pi = 4 \times \frac{N_{\text{inside}}}{N_{\text{total}}}$
 
-The process for estimating $ \pi $ involves a unit circle inscribed in a square. The side length of the square is 2, while the radius of the circle is 1. 
-
-- The equation of the circle is:  
-  $
-  x^2 + y^2 \leq 1
-  $
-  This describes the points that lie within or on the boundary of the unit circle.
-
-- The area of the square is:  
-  $
-  \text{Area of Square} = 2 \times 2 = 4
-  $
-
-- The area of the unit circle is given by:  
-  $
-  \text{Area of Circle} = \pi \times 1^2 = \pi
-  $
-
-- The ratio of the area of the circle to the area of the square is:
-  $
-  \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
-  $
-
-- By generating random points within the square and checking how many fall inside the circle, we estimate $ \pi $. The ratio of points inside the circle to the total number of points is:
-  $
-  \frac{\text{Points Inside Circle}}{\text{Total Points}} \approx \frac{\pi}{4}
-  $
-  Therefore, we estimate $ \pi $ as:
-  $
-  \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
-  $
+Where:
+- $N_{\text{inside}}$ is the number of points inside the circle.
+- $N_{\text{total}}$ is the total number of points generated in the square.
 
 ### 2. Simulation:
+- Generate random points within a square with dimensions from -1 to 1 in both $x$ and $y$ directions.
+- Check whether each point lies inside the unit circle by testing if:
 
-We generate random points $ (x, y) $ within the square $[-1, 1] \times [-1, 1]$ and check if they satisfy the condition $ x^2 + y^2 \leq 1 $, meaning the point is inside the unit circle.
+$x^2 + y^2 \leq 1$
+
+If true, the point is inside the circle.
+
+### 3. Visualization:
+- Create a plot showing the random points in the square.
+- Points inside the circle will be shown in one color, and points outside will be in another color.
+- Display the circle and square for clarity.
+
+### 4. Analysis:
+- Investigate how the accuracy of the estimate improves as the number of points increases.
+- Discuss the convergence rate and computational considerations for this method.
+
+---
+
+## Part 2: Estimating $ \pi $ Using Buffon’s Needle
+
+### 1. Theoretical Foundation:
+- The Buffon’s Needle problem involves dropping a needle of length $L$ onto a plane with parallel lines spaced a distance $D$ apart.
+- The probability of the needle crossing a line depends on the angle of the needle and its distance to the nearest line.
+- The formula for estimating $\pi$ based on this probability is:
+
+$\pi = \frac{2L N_{\text{drops}}}{D N_{\text{crosses}}}$
+
+Where:
+- $L$ is the length of the needle.
+- $D$ is the distance between the parallel lines.
+- $N_{\text{crosses}}$ is the number of times the needle crosses a line.
+- $N_{\text{drops}}$ is the total number of needle drops.
+
+### 2. Simulation:
+- Simulate the random dropping of a needle onto a plane with parallel lines.
+- For each drop, calculate the distance from the needle’s midpoint to the nearest line and the angle of the needle.
+- Determine whether the needle crosses a line based on the geometric conditions.
+
+### 3. Visualization:
+- Create a graphical representation of the simulation.
+- Show the positions of the needles and whether they cross a line or not.
+
+### 4. Analysis:
+- Explore how the number of needle drops affects the estimate’s accuracy.
+- Compare the convergence rate of this method to the circle-based approach.
 
 ![alt text](image-1.png)
 

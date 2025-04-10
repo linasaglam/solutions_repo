@@ -172,52 +172,70 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
-<h1 id="estimating-pi-using-monte-carlo-methods">Estimating $ \pi $ Using Monte Carlo Methods</h1>
+<h1 id="estimating-pi-using-monte-carlo-methods">Estimating <span class="arithmatex">\(\pi\)</span> Using Monte Carlo Methods</h1>
 <h2 id="motivation">Motivation:</h2>
-<p>Monte Carlo simulations are a powerful class of computational techniques that use randomness to solve problems or estimate values. One of the most elegant applications of Monte Carlo methods is estimating the value of $ \pi $ through geometric probability. By randomly generating points and analyzing their positions relative to a geometric shape, we can approximate $ \pi $ in an intuitive and visually engaging way.</p>
-<p>This problem connects fundamental concepts of probability, geometry, and numerical computation. It also provides a gateway to understanding how randomness can be harnessed to solve complex problems in physics, finance, and computer science. The Monte Carlo approach to $ \pi $ estimation highlights the versatility and simplicity of this method while offering practical insights into convergence rates and computational efficiency.</p>
-<h2 id="part-1-estimating-pi-using-a-circle">Part 1: Estimating $ \pi $ Using a Circle</h2>
+<p>Monte Carlo simulations are a powerful class of computational techniques that use randomness to solve problems or estimate values. One of the most elegant applications of Monte Carlo methods is estimating the value of <span class="arithmatex">\(\pi\)</span> through geometric probability. By randomly generating points and analyzing their positions relative to a geometric shape, we can approximate <span class="arithmatex">\(\pi\)</span> in an intuitive and visually engaging way.</p>
+<p>This problem connects fundamental concepts of probability, geometry, and numerical computation. It also provides a gateway to understanding how randomness can be harnessed to solve complex problems in physics, finance, and computer science. The Monte Carlo approach to <span class="arithmatex">\(\pi\)</span> estimation highlights the versatility and simplicity of this method while offering practical insights into convergence rates and computational efficiency.</p>
+<h2 id="part-1-estimating-pi-using-a-circle">Part 1: Estimating <span class="arithmatex">\(\pi\)</span> Using a Circle</h2>
 <h3 id="1-theoretical-foundation">1. Theoretical Foundation:</h3>
-<p>The process for estimating $ \pi $ involves a unit circle inscribed in a square. The side length of the square is 2, while the radius of the circle is 1. </p>
 <ul>
-<li>
-<p>The equation of the circle is:<br/>
-  $
-  x^2 + y^2 \leq 1
-  $
-  This describes the points that lie within or on the boundary of the unit circle.</p>
-</li>
-<li>
-<p>The area of the square is:<br/>
-  $
-  \text{Area of Square} = 2 \times 2 = 4
-  $</p>
-</li>
-<li>
-<p>The area of the unit circle is given by:<br/>
-  $
-  \text{Area of Circle} = \pi \times 1^2 = \pi
-  $</p>
-</li>
-<li>
-<p>The ratio of the area of the circle to the area of the square is:
-  $
-  \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
-  $</p>
-</li>
-<li>
-<p>By generating random points within the square and checking how many fall inside the circle, we estimate $ \pi $. The ratio of points inside the circle to the total number of points is:
-  $
-  \frac{\text{Points Inside Circle}}{\text{Total Points}} \approx \frac{\pi}{4}
-  $
-  Therefore, we estimate $ \pi $ as:
-  $
-  \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
-  $</p>
-</li>
+<li>The ratio of points inside a circle to the total number of points in a square can be used to estimate <span class="arithmatex">\(\pi\)</span>. </li>
+<li>A unit circle with radius <span class="arithmatex">\(r = 1\)</span> is inscribed within a square with side length 2. The area of the circle is <span class="arithmatex">\(A_{\text{circle}} = \pi r^2\)</span>, which simplifies to <span class="arithmatex">\(\pi\)</span> for <span class="arithmatex">\(r = 1\)</span>.</li>
+<li>The area of the square is <span class="arithmatex">\(A_{\text{square}} = 2 \times 2 = 4\)</span>.</li>
+<li>The ratio of points inside the circle to the total points can be used to approximate <span class="arithmatex">\(\pi\)</span>:</li>
 </ul>
+<p><span class="arithmatex">\(\pi = 4 \times \frac{N_{\text{inside}}}{N_{\text{total}}}\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(N_{\text{inside}}\)</span> is the number of points inside the circle.
+- <span class="arithmatex">\(N_{\text{total}}\)</span> is the total number of points generated in the square.</p>
 <h3 id="2-simulation">2. Simulation:</h3>
-<p>We generate random points $ (x, y) $ within the square <span class="arithmatex">\([-1, 1] \times [-1, 1]\)</span> and check if they satisfy the condition $ x^2 + y^2 \leq 1 $, meaning the point is inside the unit circle.</p>
+<ul>
+<li>Generate random points within a square with dimensions from -1 to 1 in both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions.</li>
+<li>Check whether each point lies inside the unit circle by testing if:</li>
+</ul>
+<p><span class="arithmatex">\(x^2 + y^2 \leq 1\)</span></p>
+<p>If true, the point is inside the circle.</p>
+<h3 id="3-visualization">3. Visualization:</h3>
+<ul>
+<li>Create a plot showing the random points in the square.</li>
+<li>Points inside the circle will be shown in one color, and points outside will be in another color.</li>
+<li>Display the circle and square for clarity.</li>
+</ul>
+<h3 id="4-analysis">4. Analysis:</h3>
+<ul>
+<li>Investigate how the accuracy of the estimate improves as the number of points increases.</li>
+<li>Discuss the convergence rate and computational considerations for this method.</li>
+</ul>
+<hr/>
+<h2 id="part-2-estimating-pi-using-buffons-needle">Part 2: Estimating $ \pi $ Using Buffon’s Needle</h2>
+<h3 id="1-theoretical-foundation_1">1. Theoretical Foundation:</h3>
+<ul>
+<li>The Buffon’s Needle problem involves dropping a needle of length <span class="arithmatex">\(L\)</span> onto a plane with parallel lines spaced a distance <span class="arithmatex">\(D\)</span> apart.</li>
+<li>The probability of the needle crossing a line depends on the angle of the needle and its distance to the nearest line.</li>
+<li>The formula for estimating <span class="arithmatex">\(\pi\)</span> based on this probability is:</li>
+</ul>
+<p><span class="arithmatex">\(\pi = \frac{2L N_{\text{drops}}}{D N_{\text{crosses}}}\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(L\)</span> is the length of the needle.
+- <span class="arithmatex">\(D\)</span> is the distance between the parallel lines.
+- <span class="arithmatex">\(N_{\text{crosses}}\)</span> is the number of times the needle crosses a line.
+- <span class="arithmatex">\(N_{\text{drops}}\)</span> is the total number of needle drops.</p>
+<h3 id="2-simulation_1">2. Simulation:</h3>
+<ul>
+<li>Simulate the random dropping of a needle onto a plane with parallel lines.</li>
+<li>For each drop, calculate the distance from the needle’s midpoint to the nearest line and the angle of the needle.</li>
+<li>Determine whether the needle crosses a line based on the geometric conditions.</li>
+</ul>
+<h3 id="3-visualization_1">3. Visualization:</h3>
+<ul>
+<li>Create a graphical representation of the simulation.</li>
+<li>Show the positions of the needles and whether they cross a line or not.</li>
+</ul>
+<h3 id="4-analysis_1">4. Analysis:</h3>
+<ul>
+<li>Explore how the number of needle drops affects the estimate’s accuracy.</li>
+<li>Compare the convergence rate of this method to the circle-based approach.</li>
+</ul>
 <p><img alt="alt text" src="../image-1.png"/></p>
 <h3 id="3-python-code-for-circle-based-method">3. Python Code for Circle-Based Method:</h3>
 <pre><code class="language-python">import numpy as np

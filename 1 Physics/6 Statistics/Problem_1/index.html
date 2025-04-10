@@ -174,29 +174,23 @@
 <h1 id="problem-1">Problem 1</h1>
 <hr/>
 <h1 id="motivation">Motivation:</h1>
-<h1 id="_1"></h1>
-<h1 id="the-central-limit-theorem-clt-is-a-fundamental-result-in-statistics-that">The <strong>Central Limit Theorem (CLT)</strong> is a fundamental result in statistics that</h1>
+<p>The <strong>Central Limit Theorem (CLT)</strong> is a fundamental result in statistics that </p>
 <h1 id="states-the-following">states the following:</h1>
+<p>"The sampling distribution of the sample mean will tend to follow a <strong>normal distribution</strong> 
+ as the sample size increases, regardless of the shape of the original population distribution."</p>
+<h1 id="_1"></h1>
+<p>This means that even if the underlying population is not normally distributed, 
+ if we take sufficiently large random samples and compute the sample mean, the distribution of the 
+ sample means will converge to a normal distribution as the sample size increases.</p>
 <h1 id="_2"></h1>
-<h1 id="the-sampling-distribution-of-the-sample-mean-will-tend-to-follow-a-normal-distribution">"The sampling distribution of the sample mean will tend to follow a <strong>normal distribution</strong></h1>
-<h1 id="as-the-sample-size-increases-regardless-of-the-shape-of-the-original-population-distribution">as the sample size increases, regardless of the shape of the original population distribution."</h1>
-<h1 id="_3"></h1>
-<h1 id="this-means-that-even-if-the-underlying-population-is-not-normally-distributed">This means that even if the underlying population is not normally distributed,</h1>
-<h1 id="if-we-take-sufficiently-large-random-samples-and-compute-the-sample-mean-the-distribution-of-the">if we take sufficiently large random samples and compute the sample mean, the distribution of the</h1>
-<h1 id="sample-means-will-converge-to-a-normal-distribution-as-the-sample-size-increases">sample means will converge to a normal distribution as the sample size increases.</h1>
-<h1 id="_4"></h1>
-<h1 id="mathematically-let-x1-x2-xn-be-iid-independent-and-identically-distributed-random-variables">Mathematically, let X₁, X₂, ..., Xₙ be i.i.d. (independent and identically distributed) random variables</h1>
-<h1 id="with-a-population-mean-and-variance-2-then-the-sample-mean">with a population mean μ and variance σ². Then the sample mean:</h1>
-<h1 id="_5"></h1>
-<h1 id="xn-1n-xi-follows">X̄ₙ = (1/n) * Σ Xᵢ  follows:</h1>
-<h1 id="xn-n-2n-approximately-as-n">X̄ₙ ~ N(μ, σ²/n) approximately, as n → ∞</h1>
-<h1 id="_6"></h1>
-<h1 id="this-theorem-holds-true-regardless-of-the-original-population-distribution-eg-uniform-exponential-binomial">This theorem holds true regardless of the original population distribution (e.g., Uniform, Exponential, Binomial).</h1>
-<h1 id="_7"></h1>
-<h1 id="by-simulating-different-population-distributions-and-calculating-sample-means-we-can-observe-the-clt-in-action">By simulating different population distributions and calculating sample means, we can observe the CLT in action.</h1>
-<hr/>
-<h1 id="population-size-large-enough-to-approximate-the-true-population">Population size (large enough to approximate the "true" population)</h1>
-<p>population_size = 100000</p>
+<p>Mathematically, let X₁, X₂, ..., Xₙ be i.i.d. (independent and identically distributed) random variables 
+ with a population mean μ and variance σ². Then the sample mean:</p>
+<p>X̄ₙ = (1/n) * Σ Xᵢ  follows:
+ X̄ₙ ~ N(μ, σ²/n) approximately, as n → ∞</p>
+<p>This theorem holds true regardless of the original population distribution (e.g., Uniform, Exponential, Binomial).</p>
+<h2 id="by-simulating-different-population-distributions-and-calculating-sample-means-we-can-observe-the-clt-in-action">By simulating different population distributions and calculating sample means, we can observe the CLT in action.</h2>
+<p>Population size (large enough to approximate the "true" population)
+population_size = 100000</p>
 <h1 id="generate-different-population-distributions">Generate different population distributions</h1>
 <p>uniform_population = np.random.uniform(low=0, high=1, size=population_size)
 exponential_population = np.random.exponential(scale=1.0, size=population_size)
@@ -268,17 +262,19 @@ plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
 </code></pre>
 <h1 id="clt-summary">CLT Summary:</h1>
-<h1 id="_8"></h1>
-<h1 id="regardless-of-the-original-population-distribution-uniform-skewed-discrete">Regardless of the original population distribution (uniform, skewed, discrete),</h1>
-<h1 id="as-the-sample-size-increases-the-distribution-of-the-sample-mean-approaches">as the sample size increases, the distribution of the sample mean approaches</h1>
+<h1 id="_3"></h1>
+<p>Regardless of the original population distribution (uniform, skewed, discrete),
+ as the sample size increases, the distribution of the sample mean approaches</p>
 <h1 id="a-normal-distribution">a normal distribution:</h1>
-<h1 id="_9"></h1>
-<h1 id="xn-n-2n">X̄ₙ ≈ N(μ, σ²/n)</h1>
-<h1 id="_10"></h1>
+<h1 id="_4"></h1>
+<p>X̄ₙ ≈ N(μ, σ²/n)</p>
+<h1 id="_5"></h1>
 <h1 id="key-observations-from-simulation">Key observations from simulation:</h1>
-<h1 id="-with-small-sample-sizes-eg-n5-the-shape-of-the-population-is-still-visible">- With small sample sizes (e.g., n=5), the shape of the population is still visible.</h1>
-<h1 id="-at-n30-or-greater-all-distributions-begin-to-look-approximately-normal">- At n=30 or greater, all distributions begin to look approximately normal.</h1>
-<h1 id="-the-variance-of-the-sample-mean-decreases-as-sample-size-increases">- The variance of the sample mean decreases as sample size increases.</h1>
+<ul>
+<li>With small sample sizes (e.g., n=5), the shape of the population is still visible.</li>
+<li>At n=30 or greater, all distributions begin to look approximately normal.</li>
+<li>The variance of the sample mean decreases as sample size increases.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

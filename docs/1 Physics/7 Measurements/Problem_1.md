@@ -124,3 +124,5 @@ print(f"Standard deviation of time: {T_std:.3f} s")
 print(f"Period of oscillation: {T_period:.3f} s")
 print(f"Measured g: {g_measured:.3f} m/s²")
 print(f"Uncertainty in g: {Delta_g:.3f} m/s²")
+
+```

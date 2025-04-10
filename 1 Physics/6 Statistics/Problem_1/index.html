@@ -172,6 +172,113 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<hr/>
+<h1 id="motivation">Motivation:</h1>
+<h1 id="_1"></h1>
+<h1 id="the-central-limit-theorem-clt-is-a-fundamental-result-in-statistics-that">The <strong>Central Limit Theorem (CLT)</strong> is a fundamental result in statistics that</h1>
+<h1 id="states-the-following">states the following:</h1>
+<h1 id="_2"></h1>
+<h1 id="the-sampling-distribution-of-the-sample-mean-will-tend-to-follow-a-normal-distribution">"The sampling distribution of the sample mean will tend to follow a <strong>normal distribution</strong></h1>
+<h1 id="as-the-sample-size-increases-regardless-of-the-shape-of-the-original-population-distribution">as the sample size increases, regardless of the shape of the original population distribution."</h1>
+<h1 id="_3"></h1>
+<h1 id="this-means-that-even-if-the-underlying-population-is-not-normally-distributed">This means that even if the underlying population is not normally distributed,</h1>
+<h1 id="if-we-take-sufficiently-large-random-samples-and-compute-the-sample-mean-the-distribution-of-the">if we take sufficiently large random samples and compute the sample mean, the distribution of the</h1>
+<h1 id="sample-means-will-converge-to-a-normal-distribution-as-the-sample-size-increases">sample means will converge to a normal distribution as the sample size increases.</h1>
+<h1 id="_4"></h1>
+<h1 id="mathematically-let-x1-x2-xn-be-iid-independent-and-identically-distributed-random-variables">Mathematically, let X₁, X₂, ..., Xₙ be i.i.d. (independent and identically distributed) random variables</h1>
+<h1 id="with-a-population-mean-and-variance-2-then-the-sample-mean">with a population mean μ and variance σ². Then the sample mean:</h1>
+<h1 id="_5"></h1>
+<h1 id="xn-1n-xi-follows">X̄ₙ = (1/n) * Σ Xᵢ  follows:</h1>
+<h1 id="xn-n-2n-approximately-as-n">X̄ₙ ~ N(μ, σ²/n) approximately, as n → ∞</h1>
+<h1 id="_6"></h1>
+<h1 id="this-theorem-holds-true-regardless-of-the-original-population-distribution-eg-uniform-exponential-binomial">This theorem holds true regardless of the original population distribution (e.g., Uniform, Exponential, Binomial).</h1>
+<h1 id="_7"></h1>
+<h1 id="by-simulating-different-population-distributions-and-calculating-sample-means-we-can-observe-the-clt-in-action">By simulating different population distributions and calculating sample means, we can observe the CLT in action.</h1>
+<hr/>
+<h1 id="population-size-large-enough-to-approximate-the-true-population">Population size (large enough to approximate the "true" population)</h1>
+<p>population_size = 100000</p>
+<h1 id="generate-different-population-distributions">Generate different population distributions</h1>
+<p>uniform_population = np.random.uniform(low=0, high=1, size=population_size)
+exponential_population = np.random.exponential(scale=1.0, size=population_size)
+binomial_population = np.random.binomial(n=10, p=0.5, size=population_size)</p>
+<h1 id="sample-sizes-to-test-clt-convergence">Sample sizes to test CLT convergence</h1>
+<p>sample_sizes = [5, 10, 30, 50]</p>
+<h1 id="number-of-samples-to-draw-for-each-sample-size">Number of samples to draw for each sample size</h1>
+<p>n_samples = 1000</p>
+<h1 id="function-to-compute-sample-means">Function to compute sample means</h1>
+<p>def compute_sample_means(population, sample_size, n_samples):
+    """
+    Draws multiple samples from a population and computes the sample means.</p>
+<pre><code>Parameters:
+    population (array): the full population data
+    sample_size (int): size of each sample
+    n_samples (int): number of samples to draw
+
+Returns:
+    np.array: array of sample means
+"""
+sample_means = []
+for _ in range(n_samples):
+    sample = np.random.choice(population, size=sample_size, replace=False)
+    sample_mean = np.mean(sample)
+    sample_means.append(sample_mean)
+return np.array(sample_means)
+</code></pre>
+<h1 id="dictionary-of-distributions-to-analyze">Dictionary of distributions to analyze</h1>
+<p>distributions = {
+    "Uniform(0,1)": uniform_population,
+    "Exponential(λ=1)": exponential_population,
+    "Binomial(n=10, p=0.5)": binomial_population
+}</p>
+<p><img alt="alt text" src="../image.png"/></p>
+<h1 id="visualization-of-sample-mean-distributions">Visualization of sample mean distributions</h1>
+<p>for dist_name, population in distributions.items():
+    plt.figure(figsize=(14, 10))</p>
+<pre><code>for i, size in enumerate(sample_sizes):
+    means = compute_sample_means(population, sample_size=size, n_samples=n_samples)
+
+    plt.subplot(2, 2, i + 1)
+    sns.histplot(means, kde=True, bins=30, color='steelblue')
+    plt.title(f'{dist_name} - Sample Size = {size}')
+    plt.xlabel('Sample Mean')
+    plt.ylabel('Frequency')
+
+    # Empirical mean and variance of the sampling distribution
+    empirical_mean = np.mean(means)
+    empirical_std = np.std(means)
+
+    # True population parameters
+    pop_mean = np.mean(population)
+    pop_var = np.var(population)
+
+    # Theoretical standard deviation of the sample mean
+    # σ/√n
+    theoretical_std = np.sqrt(pop_var / size)
+
+    print(f"Distribution: {dist_name} | Sample Size: {size}")
+    print(f"  Population Mean (μ): {pop_mean:.4f}")
+    print(f"  Population Variance (σ²): {pop_var:.4f}")
+    print(f"  Empirical Mean of X̄: {empirical_mean:.4f}")
+    print(f"  Empirical Std of X̄: {empirical_std:.4f}")
+    print(f"  Theoretical Std of X̄: {theoretical_std:.4f}")
+    print("-" * 60)
+
+plt.suptitle(f'Sampling Distribution of the Mean — {dist_name}', fontsize=16)
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.show()
+</code></pre>
+<h1 id="clt-summary">CLT Summary:</h1>
+<h1 id="_8"></h1>
+<h1 id="regardless-of-the-original-population-distribution-uniform-skewed-discrete">Regardless of the original population distribution (uniform, skewed, discrete),</h1>
+<h1 id="as-the-sample-size-increases-the-distribution-of-the-sample-mean-approaches">as the sample size increases, the distribution of the sample mean approaches</h1>
+<h1 id="a-normal-distribution">a normal distribution:</h1>
+<h1 id="_9"></h1>
+<h1 id="xn-n-2n">X̄ₙ ≈ N(μ, σ²/n)</h1>
+<h1 id="_10"></h1>
+<h1 id="key-observations-from-simulation">Key observations from simulation:</h1>
+<h1 id="-with-small-sample-sizes-eg-n5-the-shape-of-the-population-is-still-visible">- With small sample sizes (e.g., n=5), the shape of the population is still visible.</h1>
+<h1 id="-at-n30-or-greater-all-distributions-begin-to-look-approximately-normal">- At n=30 or greater, all distributions begin to look approximately normal.</h1>
+<h1 id="-the-variance-of-the-sample-mean-decreases-as-sample-size-increases">- The variance of the sample mean decreases as sample size increases.</h1>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

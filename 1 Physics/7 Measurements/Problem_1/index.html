@@ -258,34 +258,43 @@ $$</p>
 <hr/>
 <p><img alt="alt text" src="../image.png"/></p>
 <h2 id="python-script-for-measurement-and-uncertainty-calculation">Python Script for Measurement and Uncertainty Calculation:</h2>
-<p>```python
-import numpy as np</p>
-<h1 id="given-data">Given data</h1>
-<p>L = 1.0  # Length of the pendulum in meters
+<pre><code class="language-python">import numpy as np
+
+# Given data
+L = 1.0  # Length of the pendulum in meters
 T_total = np.array([20.5, 20.6, 20.4, 20.7, 20.5, 20.6, 20.5, 20.6, 20.4, 20.5])  # Time for 10 oscillations in seconds
-N = len(T_total)</p>
-<h1 id="step-1-calculate-mean-and-standard-deviation">Step 1: Calculate mean and standard deviation</h1>
-<p>T_mean = np.mean(T_total)
+N = len(T_total)
+
+# Step 1: Calculate mean and standard deviation
+T_mean = np.mean(T_total)
 T_std = np.std(T_total, ddof=1)
-Delta_T_mean = T_std / np.sqrt(N)</p>
-<h1 id="step-2-calculate-the-period-t">Step 2: Calculate the period (T)</h1>
-<p>T_period = T_mean / 10  # Period for a single oscillation</p>
-<h1 id="step-3-calculate-gravitational-acceleration-g">Step 3: Calculate gravitational acceleration (g)</h1>
-<p>g_measured = (4 * np.pi<strong>2 * L) / T_period</strong>2</p>
-<h1 id="step-4-propagate-uncertainties">Step 4: Propagate uncertainties</h1>
-<p>Delta_L = 0.005  # Uncertainty in length (5mm)
-Delta_T = Delta_T_mean</p>
-<h1 id="partial-derivatives">Partial derivatives</h1>
-<p>dgdL = (4 * np.pi<strong>2) / T_period</strong>2
-dgdt = - (8 * np.pi<strong>2 * L) / T_period</strong>3</p>
-<h1 id="uncertainty-in-g">Uncertainty in g</h1>
-<p>Delta_g = np.sqrt((dgdL * Delta_L)<strong>2 + (dgdt * Delta_T)</strong>2)</p>
-<h1 id="output-results">Output results</h1>
-<p>print(f"Mean time for 10 oscillations: {T_mean:.3f} s")
+Delta_T_mean = T_std / np.sqrt(N)
+
+# Step 2: Calculate the period (T)
+T_period = T_mean / 10  # Period for a single oscillation
+
+# Step 3: Calculate gravitational acceleration (g)
+g_measured = (4 * np.pi**2 * L) / T_period**2
+
+# Step 4: Propagate uncertainties
+Delta_L = 0.005  # Uncertainty in length (5mm)
+Delta_T = Delta_T_mean
+
+# Partial derivatives
+dgdL = (4 * np.pi**2) / T_period**2
+dgdt = - (8 * np.pi**2 * L) / T_period**3
+
+# Uncertainty in g
+Delta_g = np.sqrt((dgdL * Delta_L)**2 + (dgdt * Delta_T)**2)
+
+# Output results
+print(f"Mean time for 10 oscillations: {T_mean:.3f} s")
 print(f"Standard deviation of time: {T_std:.3f} s")
 print(f"Period of oscillation: {T_period:.3f} s")
 print(f"Measured g: {g_measured:.3f} m/s²")
-print(f"Uncertainty in g: {Delta_g:.3f} m/s²")</p>
+print(f"Uncertainty in g: {Delta_g:.3f} m/s²")
+
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
